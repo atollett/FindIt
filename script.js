@@ -9,7 +9,11 @@ $("#button").click(function(){
   // document.body.append($bookQuery);
 
   var bookQuery = $( "#bookQuery" ).val();
-  queryURL += bookQuery;
+  //queryURL += bookQuery;
+
+  queryURL = "http://openlibrary.org/search.json?q=elantris"
+
+  var priceArray = [];
     
     $.ajax({
         //crossDomain: true,
@@ -20,15 +24,45 @@ $("#button").click(function(){
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-        
-        $("#appendAuthor").append(response.items[0].volumeInfo.authors[0]);
-        $("#appendDescription").append(response.items[0].volumeInfo.description);
-        $("#appendTitle").append(response.items[0].volumeInfo.title);
 
-        console.log(response.items[0].volumeInfo.authors[0]);
-        console.log(response.items[0].volumeInfo.description);
-        console.log(response.items[0].volumeInfo.title);
         console.log(response);
+
+
+
+
+
+        
+        // $("#appendAuthor").append(response.items[0].volumeInfo.authors[0]);
+        // $("#appendDescription").append(response.items[0].volumeInfo.description);
+        // $("#appendTitle").append(response.items[0].volumeInfo.title);
+       
+
+        // for (var i = 0; i < 10; ++i) {
+        //   //var price = response.items[0].saleInfo.retailPrice.amount;
+          
+        //   if(response.items[i].saleInfo.saleability === "NOT_FOR_SALE") {
+        //     //console.log("Is this working?");
+        //     continue;
+        //   }
+        //   else {
+
+        //     priceArray.push(response.items[i].saleInfo.retailPrice.amount);
+        //     // if(response.items[i].saleInfo.retailPrice.amount < price) {
+        //     //   price = response.items[i].saleInfo.retailPrice.amount;
+        //     // }
+
+        //     //$("#appendPrice").append(response.items[i].saleInfo.retailPrice.amount);
+        //     //console.log(response.items[i].saleInfo.retailPrice[0]);
+        //   }
+        // }
+
+        // priceArray.sort();
+        // $("#appendPrice").append(priceArray);
+
+        // // console.log(response.items[0].volumeInfo.authors[0]);
+        // // console.log(response.items[0].volumeInfo.description);
+        // // console.log(response.items[0].volumeInfo.title);
+        // console.log(response);
       });
 });
 
