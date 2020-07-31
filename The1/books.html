@@ -43,10 +43,10 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
-        <h1 <input type="text" id="titleQuery">
+        <input type="text" id="titleQuery">
     <button id="buttonTitle">Title Search</button></h1>
         <div class="row center">
-          <h5 class=""></h5>
+          <h5 id="test"></h5>
         </div>
       </div>
     </div>
@@ -64,15 +64,87 @@
       </div>
     </div>
     <div class="parallax"><img src="background4.jpg" alt="Unsplashed background img 3"></div>
+    <div id="book-view"></div>
   </div>
   <footer>
   </footer>
+
+  <!-- <table>
+    <thead>
+      <tr>
+          <th id="titleBook">Title</th>
+          <th id="authorBook">Author</th>
+          <th id="priceBook">Book Price</th>
+          <th id="summaryBook">Book Summary</th>
+      </tr>
+    </thead>
+  </table> -->
 
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+
+    
+    
+    $("#buttonTitle").click(function(){
+      var bookQuery = $( "#titleQuery" ).val();
+      var queryURL = `https://cors-anywhere.herokuapp.com/https://www.googleapis.com/books/v1/volumes?q=${bookQuery}`
+      
+      console.log(queryURL);
+      
+      $.ajax({
+          crossDomain: true,
+          headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+          },
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+          console.log(response);
+          console.log(response.items[0].volumeInfo.title);
+          //$("titleBook").append(response.items[0].volumeInfo.title);
+
+
+
+
+          var bookDiv = $("<div class='book'>");
+          var title = response.items[0].volumeInfo.title;
+          var pOne = $("<p>").text("Title: " + title);
+          bookDiv.append(pOne);
+
+          var author = response.items[0].volumeInfo.authors[0];
+          var pTwo = $("<p>").text("Author: " + author);
+          bookDiv.append(pTwo);
+
+          var desc = response.items[0].volumeInfo.description;
+          var pThree = $("<p>").text("Description: " + desc);
+          bookDiv.append(pThree);
+
+          var price = response.items[0].saleInfo.retailPrice.amount;
+          var pFour = $("<p>").text("Price: " + price);
+          bookDiv.append(pFour);
+
+
+          var image = $("<img src=''>");
+          $(image).attr("src", response.items[0].volumeInfo.imageLinks.thumbnail);
+
+          $("#book-view").append(bookDiv);
+          $("#book-view").append(image);
+  
+  });
+
+
+    });
+
+
+    
+
+
+  </script>
 
 </body>
 
