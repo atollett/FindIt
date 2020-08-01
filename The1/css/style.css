@@ -11,6 +11,12 @@ nav .brand-logo {
   color: #444;
 }
 
+h5 {
+  font-size: 40px;
+  color:white;
+  font-weight: bold;
+}
+
 p {
   line-height: 2rem;
 }
