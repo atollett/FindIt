@@ -35,4 +35,4 @@ While we are at home, May 2019, Medium did a study of online search queries and 
 ![Image of Working Application](Program.View.png)
 ![Image of Working Application](Proj-1.2.png)
 ![Image of Working Application](Screenshot.png)
-![Image of Working Application](Findit.pptx)
+
