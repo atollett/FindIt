@@ -32,7 +32,7 @@ Summation: To begin, with many people at home due to the pandemic. We wanted to 
 
 While we are at home, May 2019, Medium did a study of online search queries and found that online searches are about being Inspired, feel good, update socially ,entertain, find, be in the know, connect, and comfort. This led us to focus on helping people entertain, feel good, and inspire. Those 3 are 54% of the searches Medium studied. We want to help you Find It……
 
-![Image of Working Application](Program View.PNG)
-![Image of Working Application](Proj-1.2.PNG)
-![Image of Working Application](Screen shot.PNG)
+![Image of Working Application](Program View.png)
+![Image of Working Application](Proj-1.2.png)
+![Image of Working Application](Screen shot.png)
 
