@@ -55,3 +55,26 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+.movie, .book, .music {
+  align-content: left;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-right: 500px;
+  padding-bottom: 50px;
+}
+
+.books {
+
+}
+
+img {
+  margin-bottom: 50px;
+}
+
+p {
+  color: #26a69a;
+  margin: 2px;
+  font-weight: bolder;
+  font-size: 25px;
+}
